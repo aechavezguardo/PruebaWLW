@@ -1,0 +1,73 @@
+<mat-toolbar color="primary">
+    <span>Proyecto de componentes</span>
+    <span class="spacer"></span>
+    <button mat-button (click)="openNewInvoiceDialog()">Nueva factura</button>
+  </mat-toolbar>
+  
+  <form [formGroup]="invoiceForm" (ngSubmit)="saveInvoice()">
+    <mat-form-field appearance="fill">
+      <mat-label>Cliente</mat-label>
+      <mat-select formControlName="IdCliente">
+        <mat-option *ngFor="let cliente of clientes" [value]="cliente.id">{{ cliente.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Número de Factura</mat-label>
+      <input matInput formControlName="NumeroFactura" required />
+    </mat-form-field>  
+ 
+    <mat-form-field appearance="fill">
+      <mat-label>Total de Artículos</mat-label>
+      <input matInput type="number" formControlName="NumeroTotalArticulos" required />
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Subtotal</mat-label>
+      <input matInput type="number" formControlName="SubTotalFacturas" required />
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Total Impuestos</mat-label>
+      <input matInput type="number" formControlName="TotalImpuestos" required />
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Total Factura</mat-label>
+      <input matInput type="number" formControlName="TotalFactura" required />
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit">Guardar Factura</button>
+  </form>
+  
+  <!-- Invoice Detail Form -->
+  <form [formGroup]="invoiceDetailForm" (ngSubmit)="saveInvoiceDetail()">
+    <mat-form-field appearance="fill">
+      <mat-label>Producto</mat-label>
+      <mat-select formControlName="IdProducto">
+        <mat-option *ngFor="let producto of productos" [value]="producto.id">{{ producto.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Cantidad</mat-label>
+      <input matInput type="number" formControlName="CantidadDeProducto" required />
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Precio Unitario</mat-label>
+      <input matInput type="number" formControlName="PrecioUnitarioProducto" required />
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Subtotal</mat-label>
+      <input matInput type="number" formControlName="SubtotalProducto" required />
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Notas</mat-label>
+      <textarea matInput formControlName="Notas"></textarea>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit">Guardar Detalle de Factura</button>
+  </form>

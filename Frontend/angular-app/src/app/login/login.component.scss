@@ -1,0 +1,37 @@
+/* Asegúrate de que el body ocupe toda la altura de la ventana */
+body {
+    display: flex;
+    justify-content: center;    /* Centra horizontalmente */
+    align-items: center;        /* Centra verticalmente */
+    height: 100vh;              /* Hace que el body ocupe toda la altura de la ventana */
+    margin: 0;                  /* Elimina márgenes del body */
+    background-color: #f5f5f5;  /* Fondo claro para el diseño */
+  }
+  
+  /* Centra el mat-card dentro del contenedor */
+  mat-card {
+    width: 100%;
+    max-width: 400px;    /* Ancho máximo del formulario */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil alrededor del card */
+    border-radius: 8px; /* Bordes redondeados para el card */
+  }
+  
+  /* Estilos para los campos del formulario */
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 16px; /* Espaciado entre los campos */
+  }
+  
+  /* Asegura que el botón ocupe todo el ancho */
+  button {
+    width: 100%;
+  }
+  
+  /* Estilos para el mensaje de error */
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
