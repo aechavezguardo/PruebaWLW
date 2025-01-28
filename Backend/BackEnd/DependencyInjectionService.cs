@@ -1,6 +1,7 @@
 ﻿using BackEnd.Context;
 using BackEnd.Repositories;
 using BackEnd.Repositories.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
@@ -16,6 +17,7 @@ namespace BackEnd
             services.AddDbContext<DevLabContext>(options => options.UseSqlServer(connectionString));
             services.AddScoped<IClientesRepository, ClientesRepository>();
             services.AddScoped<IFacturasRepository, FacturasRepository>();
+            services.AddScoped<IProductosRepository, ProductosRepository>();
 
             return services;
         }
